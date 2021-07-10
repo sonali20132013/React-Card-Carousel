@@ -1,24 +1,64 @@
-import logo from './logo.svg';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
+import IndividualSetGathering from './components/IndividualSetGathering';
 
 function App() {
+  const [gatheringOfSet, setGatheringOfSet] = useState([]);
+  const [gatheringOfCards, setGatheringOfCards] = useState([]);
+
+  const fetchSetGatherings = useCallback(async () => {
+    const response = await fetch('https://api.magicthegathering.io/v1/sets');
+    if (!response.ok) {
+      throw new Error('Something went wrong !');
+    }
+    const data = await response.json();
+    const results = data.sets;
+    const loadedSets = [];
+
+    for (const key in results) {
+      loadedSets.push({
+        id: key,
+        code: results[key].code,
+        name: results[key].name,
+        type: results[key].type,
+        booster: results[key].booster,
+        releaseDate: results[key].releaseDate,
+        block: results[key].block,
+        onlineOnly: results[key].onlineOnly,
+      });
+    }
+    setGatheringOfSet(loadedSets);
+  }, []);
+  const fetchCardsGatherings = useCallback(async () => {
+    const response = await fetch('https://api.magicthegathering.io/v1/cards');
+    if (!response.ok) {
+      throw new Error('Something went wrong !');
+    }
+    const data = await response.json();
+    const results = data.cards;
+    const loadedCards = [];
+
+    for (const key in results) {
+      loadedCards.push({
+        id: results[key].id,
+        set: results[key].set,
+        setName: results[key].setName,
+        name: results[key].name,
+        colors: results[key].colors,
+        imageUrl: results[key].imageUrl,
+        artist: results[key].artist,
+      });
+    }
+    setGatheringOfCards(loadedCards);
+  }, []);
+
+  useEffect(() => {
+    fetchSetGatherings();
+    fetchCardsGatherings();
+  }, [fetchSetGatherings])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IndividualSetGathering gatherings={gatheringOfSet} gatheringOfCards={gatheringOfCards} />
   );
 }
 
