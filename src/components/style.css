@@ -1,0 +1,283 @@
+body {
+    background-color: #f5cdce;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Header style*/
+
+.header {
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    padding: 10px 185px;
+    box-shadow: 0 4px 4px -2px grey;
+  }
+  
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+}
+.header a.active {
+    background-color: transparent!important;
+    color: #000!important;
+}
+a.search .MuiSvgIcon-root {
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    font-size: 30px;
+}
+a.personal .MuiSvgIcon-root {
+    position: absolute;
+    margin: 0px 10px;
+}
+  
+.header img {
+    position: absolute;
+    z-index: 99999;
+    top: 0px;
+    left: 179px;
+}
+  
+.header a:hover {
+    background-color: transparent;
+    color: black;
+}
+  
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+  
+.header-right {
+    float: right;
+    position: relative;
+}
+  
+@media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .header-right {
+      float: none;
+    }
+  }
+/* Slide style*/
+
+.container {
+    padding: 0 120px;
+    position: relative;
+    margin-top: 2px;
+}
+.slider_body {
+    position: relative; 
+}
+  
+.slick-slide img {
+    margin: auto;
+}
+.slick-track {
+    padding: 0 30px;
+}
+.slick-prev {
+    left: 31% !important;
+    top: 60%;
+    z-index: 1;
+}
+.slick-next {
+    right: 31% !important;
+    z-index: 1;
+    top: 60%;
+}
+.title p {
+    margin: 0;
+    font-size: 20px;
+}
+.title {
+    max-width: 170px;
+    position: absolute;
+    top: 17%;
+    left: 26%;
+    z-index: 1;
+}
+.title p span {
+    font-weight: 700;
+}
+.slick-prev:before, .slick-next:before {
+    color: #000;
+}
+.slick-slide.slick-center.slick-current {
+    height: 340px!important;
+    position: relative;
+    top: -42px;
+    box-shadow: 10px 10px 20px #979393;
+    width: 100%!important;
+    max-width: 270px!important;
+    border-radius: 10px;
+    color: black;
+    border-bottom: 5px solid #f8c446;
+    margin-top: 68px;
+}
+.slick-slide.slick-center.slick-current h3{
+    font-size: 25px;
+    font-weight: 700;
+    max-width: 100%;
+    padding-top: 20px;
+    margin: 10px auto;
+}
+.slick-slide.slick-center.slick-current .cards .MuiSvgIcon-root {
+    font-size: 100px;
+    margin-top: 20px;
+}
+.slick-slide.slick-active a {
+    display: none;
+}
+.slick-slide.slick-center.slick-current a {
+    font-size: 12px;
+    display: block;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.slick-slide.slick-active h3 {
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 90px;
+    padding-top: 10px;
+    margin: 10px auto;
+}
+.slick-slide.slick-active {
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 27px 0 #f0f0f0b8;
+    border: 1px solid #ddd9d9;
+    border-radius: 10px;
+    height: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+    max-width: 150px!important;
+    width: 100%!important;
+    margin-top: 100px;
+    color: black;
+}
+.slick-list {
+    margin: 0px 60px!important;
+    max-width: 82%!important;
+    width: 100%!important;
+    background-color: #4accda;
+    min-height: 605px;
+    padding-top: 75px!important;
+}
+.slick-slide.slick-active.slick-cloned {
+    color: black;
+}
+.slick-cloned {
+    color: #fff;
+}
+.slick-slide {
+    color: #fff;
+}
+.card_slider{
+    text-align: center;
+}
+.cards {
+    text-align: center;
+    padding: 20px;
+}
+.cards h3 {
+    color: transparent;
+}
+.cards a {
+    color: transparent;
+}
+.slick-slide.slick-center.slick-current .cards a {
+    color: #000;
+}
+.slick-slide.slick-active .cards h3, a {
+    color: #000;
+}
+
+.slick-slide.slick-active .cards .MuiSvgIcon-root {
+    font-size: 60px;
+    margin-top: 20px;
+    color: #a8a6a6;
+}
+.slick-slide .cards .MuiSvgIcon-root {
+    color: transparent; 
+}
+
+@media screen and (max-width: 1024px) {
+    .slick-track {
+        padding: 0 0px!important;
+        left: 32px!important;
+    }
+    .slick-slider {
+        left: -50px;
+    }
+    .slick-slide.slick-center.slick-current {
+        max-width: 220px!important;
+    }
+    .slick-next {
+        right: 16% !important;
+    }
+    .slick-prev {
+        left: 29% !important;
+    }
+    .title {
+        top: 17%;
+        left: 14%;
+    }
+    .header img {
+        left: 130px;
+    }
+    .header {
+        padding: 10px 150px;
+    }
+    .slick-list {
+        min-height: 521px;
+    }
+    .slick-prev {
+        top: 69%;
+    }
+    .slick-next {
+        top: 69%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .slick-list {
+        left: -40px;
+    }
+    .title {
+        top: 6%;
+        left: 20%;
+    }
+    .slick-prev {
+        left: 45% !important;
+        top: 82%;
+    }
+    .slick-next {
+        top: 82%;
+    }
+    .header {
+        padding: 10px 110px;
+    }
+    .header img {
+        left: 90px;
+    }
+    .slick-next {
+        right: 17% !important;
+    }
+    .slick-list {
+        min-height: 521px;
+    }
+  }
+
+  
