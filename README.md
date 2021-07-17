@@ -8,7 +8,7 @@ To start the project
 
 Responsiveness is available on 3 screen size
 
-## Desktop - 1566px
+## Desktop - 1520px
 
 ## Tab - 1024px
 
